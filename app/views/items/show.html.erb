@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @item.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @item.category %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @item.genre %>
+</p>
+
+<p>
+  <strong>Singer:</strong>
+  <%= @item.singer %>
+</p>
+
+<p>
+  <strong>Record label:</strong>
+  <%= @item.record_label %>
+</p>
+
+<p>
+  <strong>Released date:</strong>
+  <%= @item.released_date %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @item.duration %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @item.rating %>
+</p>
+
+<p>
+  <strong>Casts:</strong>
+  <%= @item.casts %>
+</p>
+
+<p>
+  <strong>Direction:</strong>
+  <%= @item.direction %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @item.author %>
+</p>
+
+<p>
+  <strong>Isbn:</strong>
+  <%= @item.isbn %>
+</p>
+
+<p>
+  <strong>User ID:</strong>
+  <%= @item.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

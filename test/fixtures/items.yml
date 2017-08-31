@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  category: MyString
+  genre: MyString
+  singer: MyString
+  record_label: MyString
+  released_date: 2017-08-29
+  duration: MyString
+  rating: MyString
+  casts: MyString
+  direction: MyString
+  author: MyString
+  isbn: MyString
+
+two:
+  title: MyString
+  description: MyText
+  category: MyString
+  genre: MyString
+  singer: MyString
+  record_label: MyString
+  released_date: 2017-08-29
+  duration: MyString
+  rating: MyString
+  casts: MyString
+  direction: MyString
+  author: MyString
+  isbn: MyString
