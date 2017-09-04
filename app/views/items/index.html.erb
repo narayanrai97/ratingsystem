@@ -25,6 +25,7 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
+        <td><%= image_tag item.image.url(:medium) %></td>
         <td><%= item.title %></td>
         <td><%= item.description %></td>
         <td><%= item.category %></td>
@@ -35,6 +36,7 @@
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+     <%= link_to 'Logout', '/users/sign_out', method: 'delete' %><br>
   </tbody>
 </table>
 

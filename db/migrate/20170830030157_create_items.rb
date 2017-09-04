@@ -1,13 +1,13 @@
 class CreateItems < ActiveRecord::Migration[5.1]
   def change
-    create_table :items do |t|
+    items create_table :items do |t|
       t.string :title
       t.text :description
       t.string :category
       t.string :genre
       t.string :singer
       t.string :record_label
-      t.date :released_date
+      t.date   :released_date
       t.string :duration
       t.string :rating
       t.string :casts
