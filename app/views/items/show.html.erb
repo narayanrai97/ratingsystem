@@ -1,23 +1,58 @@
-  <%= image_tag @item.image.url(:medium) %>
-  <p>
-    <strong>Title:</strong>
-    <%= @item.title %>
-  </p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @item.image.url(:medium) %>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong>Title:</strong></td>
+                <td><%= @item.title %></td>
+              </tr>
+              <tr>
+                <td><strong>Description:</strong></td>
+                <td><%= @item.description %></td>
+              </tr>
+              <tr>
+                <td><strong>Category:</strong></td>
+                <td><%= @item.category %></td>
+              </tr>
+              <tr>
+                <td><strong>Genre:</strong></td>
+                <td><%= @item.genre %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <%= link_to 'Edit', edit_item_path(@item) %> |
+    <%= link_to 'Back', items_path %>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @item.description %>
-  </p>
+  </div>
+</div>
 
-  <p>
-    <strong>Category:</strong>
-    <%= @item.category %>
-  </p>
+  <!--<image_tag @item.image.url(:medium) %>-->
+  <!--<p>-->
+  <!--  <strong>Title:</strong>-->
+  <!--  <item.title %>-->
+  <!--</p>-->
 
-  <p>
-    <strong>Genre:</strong>
-    <%= @item.genre %>
-  </p>
+  <!--<p>-->
+  <!--  <strong>Description:</strong>-->
+  <!--  <item.description %>-->
+  <!--</p>-->
+
+  <!--<p>-->
+  <!--  <strong>Category:</strong>-->
+  <!--  < @item.category %>-->
+  <!--</p>-->
+
+  <!--<p>-->
+  <!--  <strong>Genre:</strong>-->
+  <!--  <@item.genre %>-->
+  <!--</p>-->
 
 <!--<p>-->
 <!--  <strong>Singer:</strong>-->
@@ -69,5 +104,3 @@
 <!--  < @item.user_id %>-->
 <!--</p>-->
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>

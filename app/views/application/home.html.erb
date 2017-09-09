@@ -6,7 +6,6 @@
                     <p> Welcome <%= current_user.email %> </p>
                     <%= link_to 'Logout', '/users/sign_out', method: 'delete' %><br>
                     <a href=" /users/edit">Edit Password</a>
-
                 <% else %>
                     <a href="/users/sign_in">Login</a><br><br>
                     <a href="/users/password/new">Recover Password</a>

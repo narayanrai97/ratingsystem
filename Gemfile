@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
+gem 'bootstrap-sass', '~> 3.3.7'
