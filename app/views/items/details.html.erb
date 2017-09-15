@@ -1,0 +1,45 @@
+<head>
+  <style>
+      h1 {color: red; text-align: center;}
+      table {border: none; background-color: lightgreen; margin-left: 100px;}
+      th, td {
+        padding: 35px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+      }
+      .panel-body {background-color: lightgreen; margin-bottom: none; }
+      .item-path { margin-left: 135px; }
+  </style>
+</head>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <% if @user_ratings.blank? %>
+      <h3>No ratings just yet, would you like to add the first!</h3>
+      <%= link_to "Rate this Item", new_item_user_rating_path(@item), class: "btn btn-danger" %>
+    <% else %>
+    <h1><%= @item.title %></h1><br>
+      <table>
+        <tr>
+          <th>User</th>
+          <th>Rating</th>
+          <th>Comment</th>
+        </tr>
+      <% @user_ratings.each do |user_rating| %>
+        <tr>
+          <td><p><%= user_rating.user.email %></p></td>
+          <td><p><%= user_rating.score %></p></td>
+          <td>
+            <div class="star-rating" data-score= <%= user_rating.score %> ></div>
+            <p><%= user_rating.comment %></p>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <div class="item-path">
+      <%= link_to 'Back', item_path %><br>
+      <%= link_to "Rate this Item", new_item_user_rating_path(@item) %>
+    </div>
+  <% end %>
+  </div>
+</div>

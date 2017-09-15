@@ -4,14 +4,14 @@ Error: File to import not found or unreadable: bootstrap-sprockets.
 
 10:  * files in this directory. Styles in this file should be added after the last require_* statement.
 11:  * It is generally better to create a new file per style scope.
-12: 
+12:
 13:  *\/
-14: 
+14:
 15:  @import "bootstrap-sprockets";
 16:  @import "bootstrap";
-17: 
+17:
 18:  body {
-19:   background: lightblue;
+19:   background: #008080;
 20:  }
 
 Backtrace:
@@ -60,4 +60,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: bootstrap-sprockets.\A         on line 15 of /home/ubuntu/workspace/ratingSystem/app/assets/stylesheets/application.css.scss\A \A 10:  * files in this directory. Styles in this file should be added after the last require_* statement.\A 11:  * It is generally better to create a new file per style scope.\A 12: \A 13:  */\A 14: \A 15:  @import \"bootstrap-sprockets\";\A 16:  @import \"bootstrap\";\A 17: \A 18:  body {\A 19:   background: lightblue;\A 20:  }"; }
+  content: "Error: File to import not found or unreadable: bootstrap-sprockets.\A on line 15 of /home/ubuntu/workspace/ratingSystem/app/assets/stylesheets/application.css.scss\A \A 10:  * files in this directory. Styles in this file should be added after the last require_* statement.\A 11:  * It is generally better to create a new file per style scope.\A 12: \A 13:  */\A 14: \A 15:  @import \"bootstrap-sprockets\";\A 16:  @import \"bootstrap\";\A 17: \A 18:  body {\A 19:   background: #008080;\A 20:  }"; }

@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
+
+  resources :user_ratings
   devise_for :users
 
-  resources :items do
-  	collection do
+  resources :items do  # tells you to go inside items
+  	collection do      #
   		get 'search'
   	end
-  	resources :reviews, except: [:show, :index]
+  	resources :user_ratings, except: [:show, :index]
   end
+
+  get '/items/:id/details' => 'items#details', as: :details
 
   root 'items#index'
 
 
 end
+

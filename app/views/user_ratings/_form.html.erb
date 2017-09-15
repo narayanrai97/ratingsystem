@@ -1,0 +1,43 @@
+<head>
+  <style>
+    radio_button { align-left: 65px; }
+  </style>
+</head>
+<%= form_for([@item, @user_rating]) do |form| %>
+  <% if @user_rating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_rating.errors.count, "error") %> prohibited this user_rating from being saved:</h2>
+
+      <ul>
+      <% @user_rating.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= form.label :score %>
+        <%= form.radio_button :score, 1%>
+        <%= form.label :score, 1, :value => "true" %>
+        <%= form.radio_button :score, 2 %>
+        <%= form.label :score, 2, :value => "true" %>
+        <%= form.radio_button :score, 3 %>
+        <%= form.label :score, 3, :value => "true" %>
+        <%= form.radio_button :score, 4 %>
+        <%= form.label :score, 4, :value => "true" %>
+        <%= form.radio_button :score, 5 %>
+        <%= form.label :score, 5, :value => "true" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :comment %>
+      <%= form.text_area :comment, id: :user_rating_comment %>
+    </div>
+
+    <div class="actions">
+      <%= form.hidden_field :user_id %>
+      <%= form.hidden_field :item_id %>
+      <%= form.submit %>
+    </div>
+<% end %>

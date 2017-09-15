@@ -41,10 +41,12 @@
     <%= form.text_field :record_label, id: :item_record_label %>
   </div>
 
+<% if @item.category == 'Movie' || @item.category == 'Song' %>
   <div class="field">
     <%= form.label :released_date %>
     <%= form.date_select :released_date, id: :item_released_date %>
   </div>
+<% end %>
 
   <div class="field">
     <%= form.label :duration %>
@@ -84,4 +86,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>

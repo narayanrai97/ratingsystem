@@ -2,28 +2,24 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /items
-  # GET /items.json
+  # <!-- SEARCH METHOD GOES HERE -->
+
   def index
     @items = Item.all
   end
 
-  # GET /items/1
-  # GET /items/1.json
   def show
+    @item = Item.find params[:id]
+    @user_ratings = UserRating.where(item_id: @item.id)
   end
 
-  # GET /items/new
   def new
     @item = current_user.items.build
   end
 
-  # GET /items/1/edit
   def edit
   end
 
-  # POST /items
-  # POST /items.json
   def create
     @item = current_user.items.build(item_params)
 
@@ -38,8 +34,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /items/1
-  # PATCH/PUT /items/1.json
   def update
     respond_to do |format|
       if @item.update(item_params)
@@ -52,14 +46,19 @@ class ItemsController < ApplicationController
     end
   end
 
-  # DELETE /items/1
-  # DELETE /items/1.json
   def destroy
     @item.destroy
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def details
+    @item = Item.find params[:id]
+
+    @user_ratings = UserRating.where(item_id: @item.id)
+
   end
 
   private

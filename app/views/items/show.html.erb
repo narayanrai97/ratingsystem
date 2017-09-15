@@ -1,19 +1,19 @@
+<head>
+  <style type="text/css">
+    .panel-body {
+    	background-color: lightgreen;
+    }
+  </style>
+</head>
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
       <div class="col-md-4">
+        <%= link_to "Rate this Item", new_item_user_rating_path(@item) %>
         <%= image_tag @item.image.url(:medium) %>
         <div class="table-responsive">
           <table class="table">
             <tbody>
-              <tr>
-                <td><strong>Title:</strong></td>
-                <td><%= @item.title %></td>
-              </tr>
-              <tr>
-                <td><strong>Description:</strong></td>
-                <td><%= @item.description %></td>
-              </tr>
               <tr>
                 <td><strong>Category:</strong></td>
                 <td><%= @item.category %></td>
@@ -23,84 +23,23 @@
                 <td><%= @item.genre %></td>
               </tr>
             </tbody>
+            <%= link_to 'Edit', edit_item_path(@item) %> |
+            <%= link_to 'Back', items_path %>
           </table>
         </div>
       </div>
+      <div class="col-md-7 col-md-offset-1">
+        <h1 class="user_rating_title"><%= @item.title %></h1>
+        <p><%= @item.description %></p>
+          <div>
+            <p><%= link_to 'User Ratings', details_path(@item)%></p>
+            <p>
+              <strong>Average Rating:</strong>
+              <%= @item.average_rating %>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <%= link_to 'Edit', edit_item_path(@item) %> |
-    <%= link_to 'Back', items_path %>
-
   </div>
-</div>
-
-  <!--<image_tag @item.image.url(:medium) %>-->
-  <!--<p>-->
-  <!--  <strong>Title:</strong>-->
-  <!--  <item.title %>-->
-  <!--</p>-->
-
-  <!--<p>-->
-  <!--  <strong>Description:</strong>-->
-  <!--  <item.description %>-->
-  <!--</p>-->
-
-  <!--<p>-->
-  <!--  <strong>Category:</strong>-->
-  <!--  < @item.category %>-->
-  <!--</p>-->
-
-  <!--<p>-->
-  <!--  <strong>Genre:</strong>-->
-  <!--  <@item.genre %>-->
-  <!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Singer:</strong>-->
-<!--  < @item.singer %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Record label:</strong>-->
-<!--  < @item.record_label %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Released date:</strong>-->
-<!--  < @item.released_date %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Duration:</strong>-->
-<!--  < @item.duration %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Rating:</strong>-->
-<!--  < @item.rating %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Casts:</strong>-->
-<!--  < @item.casts %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Directior:</strong>-->
-<!--  < @item.direction %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Author:</strong>-->
-<!--  < @item.author %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>ISBN:</strong>-->
-<!--  < @item.isbn %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>User ID:</strong>-->
-<!--  < @item.user_id %>-->
-<!--</p>-->
 

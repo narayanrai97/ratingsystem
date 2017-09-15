@@ -1,0 +1,34 @@
+<head>
+  <style >
+    th, td {padding: 15px; padding-top: 1px;  padding-bottom: 1px;  }
+  </style>
+</head>
+<p id="notice"><%= notice %></p>
+
+<h1>User Ratings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ratings</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_ratings.each do |user_rating| %>
+      <tr>
+        <td><%= user_rating.score %></td>
+        <td><%= user_rating.comment %></td>
+        <td><%= link_to 'Show', user_rating %></td>
+        <td><%= link_to 'Edit', edit_user_rating_path(user_rating) %></td>
+        <!--<td><link_to 'Destroy', user_rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User Rating', new_user_rating_path %>
