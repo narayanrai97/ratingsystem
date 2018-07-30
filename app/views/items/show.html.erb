@@ -5,9 +5,10 @@
         <%= image_tag @item.image.url(:medium) %>
         <div class="star-rating" data-score= <%= @average_rating %> ></div>
         <em><%= "#{@user_ratings.length} user ratings" %></em> |
-        <% if @item.user_id == current_user.id %>
+        <% if user_signed_in? && @item.user_id == current_user.id %>
           <%= link_to 'Edit', edit_item_path(@item) %> |
-          <%= link_to 'Delete', edit_item_path(@item) %> |
+          <%= link_to 'Delete', item_path(@item), method: :delete, 
+                       data: {confirm: "Really delete this item?"} %> |
         <% end %>
         <%= link_to 'Back', items_path %>
       
@@ -42,7 +43,6 @@
           <% @user_ratings.each do |user_rating| %>
             <div class="user_ratings">
               <div class="star-rating" data-score= <%= user_rating.score %> ></div>
-              <!--<p>< user_rating.score %></p>-->
               <p><%= user_rating.comment %></p>
             </div>
           <% end %>
