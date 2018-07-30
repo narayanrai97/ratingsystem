@@ -1,16 +1,19 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-
-  # <!-- SEARCH METHOD GOES HERE -->
+  before_action :authenticate_user!, except: [:index, :show, :search]
 
   def index
     @items = Item.all
   end
 
   def show
-    @item = Item.find params[:id]
-    @user_ratings = UserRating.where(item_id: @item.id)
+    @user_ratings = UserRating.where(item_id: @item.id).order("created_at DESC")
+    
+    if @user_ratings.blank?
+      @average_rating = 0
+    else
+      @average_rating = @user_ratings.average(:score).round(2)
+    end
   end
 
   def new
@@ -56,9 +59,13 @@ class ItemsController < ApplicationController
 
   def details
     @item = Item.find params[:id]
-
     @user_ratings = UserRating.where(item_id: @item.id)
-
+  end
+  
+  ## SEARCH ITEMS
+  def search
+    search = params[:search]
+    @search_items = Item.where("title LIKE ?", "%#{search}%")
   end
 
   private

@@ -56,3 +56,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 gem 'bootstrap-sass', '~> 3.3.7'
+
+gem 'loofah',               '~> 2.2.1' #added
+gem 'nokogiri',             '~> 1.8.2' #added
+gem 'rails-html-sanitizer', '~> 1.0.4' #added
+gem 'sprockets',            '~> 3.7.2' #added

@@ -4,11 +4,16 @@
     <p>You can also import components explicitly. To start with a full list of modules copy _bootstrap.scss file into your assets as _bootstrap-custom.scss. Then comment out components you do not want from _bootstrap-custom. </p>
     <P><%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg" %></P>
   </div>
+<% else %>
+  <!--<user.email %>-->
+  <%= button_to "Sign Out", '/users/sign_out', method: 'delete' %><br>
+
+  <a href=" /users/edit">Edit Password</a>
 <% end %>
 
 
 <div class="row">
-  <% @items.each do |item| %>
+  <% @search_items.each do |item| %>
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
         <%= link_to (image_tag item.image.url(:medium), class: 'image'), item %>

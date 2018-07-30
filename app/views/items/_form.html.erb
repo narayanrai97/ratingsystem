@@ -1,90 +1,61 @@
-<%= form_for @item, html: { multipart: true } do |form| %>
-  <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
-
-      <ul>
-      <% @item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @item, html: { multipart: true } do |form| %>
+      <% if @item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+          <ul>
+            <% @item.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :item_title %>
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control' %>
+    
+      <%= form.label :description %>
+      <%= form.text_area :description, class: 'form-control' %>
+    
+      <%= form.label :category %>
+      <%= form.text_field :category, class: 'form-control' %>
+      
+      <%= form.label :genre %>
+      <%= form.text_field :genre, class: 'form-control' %>
+    
+      <%= form.label :singer %>
+      <%= form.text_field :singer, class: 'form-control' %>
+      
+      <%= form.label :record_label %>
+      <%= form.text_field :record_label, class: 'form-control' %><br>
+      
+      <%= form.label :released_date %>
+      <%= form.date_select :released_date, class: 'form-control' %><br>
+    
+      <%= form.label :duration %>
+      <%= form.text_field :duration, class: 'form-control' %>
+    
+      <%= form.label :rating %>
+      <%= form.text_field :rating, class: 'form-control' %>
+     
+      <%= form.label :casts %>
+      <%= form.text_field :casts, class: 'form-control' %>
+      
+      <%= form.label :direction %>
+      <%= form.text_field :direction, class: 'form-control' %>
+      
+      <%= form.label :author %>
+      <%= form.text_field :author, class: 'form-control' %>
+     
+      <%= form.label :isbn %>
+      <%= form.text_field :isbn, class: 'form-control' %>
+      
+      <%= form.label :image %>
+      <%= form.file_field :image, class: 'form-control' %><br>
+     
+      <%= form.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :item_description %>
-  </div>
 
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category, id: :item_category %>
-  </div>
-
-  <div class="field">
-    <%= form.label :genre %>
-    <%= form.text_field :genre, id: :item_genre %>
-  </div>
-
-  <div class="field">
-    <%= form.label :singer %>
-    <%= form.text_field :singer, id: :item_singer %>
-  </div>
-
-  <div class="field">
-    <%= form.label :record_label %>
-    <%= form.text_field :record_label, id: :item_record_label %>
-  </div>
-
-<% if @item.category == 'Movie' || @item.category == 'Song' %>
-  <div class="field">
-    <%= form.label :released_date %>
-    <%= form.date_select :released_date, id: :item_released_date %>
-  </div>
-<% end %>
-
-  <div class="field">
-    <%= form.label :duration %>
-    <%= form.text_field :duration, id: :item_duration %>
-  </div>
-
-  <div class="field">
-    <%= form.label :rating %>
-    <%= form.text_field :rating, id: :item_rating %>
-  </div>
-
-  <div class="field">
-    <%= form.label :casts %>
-    <%= form.text_field :casts, id: :item_casts %>
-  </div>
-
-  <div class="field">
-    <%= form.label :direction %>
-    <%= form.text_field :direction, id: :item_direction %>
-  </div>
-
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :item_author %>
-  </div>
-
-  <div class="field">
-    <%= form.label :isbn %>
-    <%= form.text_field :isbn, id: :item_isbn %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image, id: :item_image %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
-<% end %>
