@@ -57,4 +57,7 @@ Rails.application.configure do
 
   # Needed for paperclip
   Paperclip.options[:command_path] = "/usr/bin/convert"
+  
+  # Raises helpful error messages.
+  config.assets.raise_runtime_errors = true
 end

@@ -3,8 +3,14 @@
     <div class="row">
       <div class="col-md-4">
         <%= image_tag @item.image.url(:medium) %>
-        <div>Average Rating: <%= @average_rating %></div>
-        <em><%= "#{@user_ratings.length} user ratings" %></em>
+        <div class="star-rating" data-score= <%= @average_rating %> ></div>
+        <em><%= "#{@user_ratings.length} user ratings" %></em> |
+        <% if @item.user_id == current_user.id %>
+          <%= link_to 'Edit', edit_item_path(@item) %> |
+          <%= link_to 'Delete', edit_item_path(@item) %> |
+        <% end %>
+        <%= link_to 'Back', items_path %>
+      
         <div class="table-responsive">
           <table class="table">
             <tbody>
@@ -35,7 +41,8 @@
         <% else %>
           <% @user_ratings.each do |user_rating| %>
             <div class="user_ratings">
-              <p><%= user_rating.score %></p>
+              <div class="star-rating" data-score= <%= user_rating.score %> ></div>
+              <!--<p>< user_rating.score %></p>-->
               <p><%= user_rating.comment %></p>
             </div>
           <% end %>
@@ -45,8 +52,13 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
-
-
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>
 
