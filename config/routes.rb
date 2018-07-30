@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root 'items#index'
   
   resources :items do  # tells you to go inside items
   	collection do      
@@ -13,5 +12,6 @@ Rails.application.routes.draw do
   get '/items/:id/details' => 'items#details', as: :details
   get '/items/search' => 'items#search'
 
+  root 'items#index'
 end
 
