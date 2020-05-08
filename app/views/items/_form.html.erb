@@ -15,40 +15,17 @@
       <%= form.text_field :title, class: 'form-control' %>
 
       <%= form.label :description %>
-      <%= form.text_area :description, class: 'form-control' %>
-
-      <!-- < form.label :category %>
-      < form.text_field :category, class: 'form-control' %> -->
+      <%= form.text_area :description, class: 'form-control' %><br/>
 
       <%= form.label :genre %>
-      <%= form.text_field :genre, class: 'form-control' %>
-
-      <!-- < form.label :singer %>
-      < form.text_field :singer, class: 'form-control' %> -->
-
-      <%= form.label :record_label %>
-      <%= form.text_field :record_label, class: 'form-control' %><br>
-
-      <%= form.label :released_date %>
-      <%= form.date_select :released_date, class: 'form-control' %><br>
-
-      <%= form.label :duration %>
-      <%= form.text_field :duration, class: 'form-control' %>
-
-      <!-- < form.label :rating %>
-      < form.text_field :rating, class: 'form-control' %> -->
+      <%= form.select :genre, options_for_select(['Action Films', 'Drama Films', 'Horror Films', 'Comedy Films', 'Crime & Gangster Films', 'Science Fiction Films'],
+                                                  'Action Films'), class: 'form-control' %><br/>
 
       <%= form.label :casts, "Characters" %>
       <%= form.text_field :casts, class: 'form-control' %>
 
       <%= form.label :direction, "Director" %>
       <%= form.text_field :direction, class: 'form-control' %>
-
-      <!-- < form.label :author %>
-      < form.text_field :author, class: 'form-control' %> -->
-
-      <!-- < form.label :isbn %>
-      < form.text_field :isbn, class: 'form-control' %> -->
 
       <%= form.label :image %>
       <%= form.file_field :image, class: 'form-control' %><br>
