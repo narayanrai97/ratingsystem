@@ -29,4 +29,4 @@
         $ email: john.doe@gmail.com
         $ password: password
         
-7. Now, you are able to write reviews to any movies you like. You can also add, update, and delete your movies from the list.
+7. Now, you are able to `write reviews` to any movies you like. You can also `add`, `update`, and `delete` your movies from the list.
