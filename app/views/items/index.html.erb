@@ -11,11 +11,12 @@
   <% @items.each do |item| %>
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
-        <%= link_to (image_tag item.image.url(:medium), class: 'image'), item %>
+        <% if item.image.present? %>
+          <%= link_to (image_tag item.image.url(:medium), class: 'image'), item %>
+        <% else %>
+          <%= link_to image_tag('missing.jpeg', size: "252.5x378.75"), item_path(item)%>
+        <% end %>
       </div>
     </div>
   <% end %>
 </div>
-
-
-

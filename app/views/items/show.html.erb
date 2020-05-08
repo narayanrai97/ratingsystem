@@ -2,7 +2,11 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-4">
-        <%= image_tag @item.image.url(:medium) %>
+        <% if @item.image.present? %>
+          <%= image_tag @item.image.url(:medium) %>
+        <% else %>
+          <%= image_tag('missing.jpeg', size: '400x600')%>
+        <% end %>
         <div class="star-rating" data-score= <%= @average_rating %> ></div>
         <em><%= "#{@user_ratings.length} user ratings" %></em> |
         <% if user_signed_in? && @item.user_id == current_user.id %>
