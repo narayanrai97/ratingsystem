@@ -1,25 +1,32 @@
-# README
+# Welcome to Movie Review App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+1. Fork the repository first
 
-* Ruby version
+2. Clone the repository:
 
-* System dependencies
+        $ git clone git@github.com:<your-username>/rating_system.git
 
-* Configuration
+3. Change directory to `rating_system` and run `bundle` to install the gems specified in the Gemfile:
 
-* Database creation
+        $ cd rating_system
+        $ bundle
+        
+4. Run migration and seed the db:
+        
+        $ rails db:migrate
+        $ rails db:seed
+        
+5. Then, start the web server:
+        
+        $ bin/rails server
 
-* Database initialization
+   Run with `--help` or `-h` for options.
 
-* How to run the test suite
+6. Go to `http://localhost:3000` and login with following credentials:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-Getting Started
+        $ email: john.doe@gmail.com
+        $ password: password
+        
+7. Now, you are able to `write reviews` to any movies you like. You can also `add`, `update`, and `delete` your movies from the list.
