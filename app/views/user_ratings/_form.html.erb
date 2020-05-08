@@ -10,37 +10,20 @@
       </ul>
     </div>
   <% end %>
-  
+
   <div class="field">
     <div id="star-rating"></div>
-    <!--< form.label :title %>-->
-    <!--< form.text_field :title, id: :user_rating_comment %>-->
-  </div>
-
-  <!--<div class="field">-->
-  <!--  < form.radio_button :score, 1%>-->
-  <!--  < form.label :score, 1, :value => "true" %>-->
-  <!--  < form.radio_button :score, 2 %>-->
-  <!--  < form.label :score, 2, :value => "true" %>-->
-  <!--  < form.radio_button :score, 3 %>-->
-  <!--  < form.label :score, 3, :value => "true" %>-->
-  <!--  < form.radio_button :score, 4 %>-->
-  <!--  < form.label :score, 4, :value => "true" %>-->
-  <!--  < form.radio_button :score, 5 %>-->
-  <!--  < form.label :score, 5, :value => "true" %>-->
-  <!--</div>-->
+  </div><br/>
 
   <div class="field">
     <%= form.label :comment %>
-    <%= form.text_area :comment %>
-  </div>
+    <%= form.text_area :comment, class: "form-control" %>
+  </div><br/>
 
   <div class="actions">
-    <!--< form.hidden_field :user_id %>-->
-    <!--< form.hidden_field :item_id %>-->
-    <%= form.submit %>
+    <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
-<% end %>  
+<% end %>
 
 <script>
   $('#star-rating').raty({
@@ -48,4 +31,3 @@
     scoreName: 'user_rating[score]'
   });
 </script>
-

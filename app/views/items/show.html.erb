@@ -7,11 +7,11 @@
         <em><%= "#{@user_ratings.length} user ratings" %></em> |
         <% if user_signed_in? && @item.user_id == current_user.id %>
           <%= link_to 'Edit', edit_item_path(@item) %> |
-          <%= link_to 'Delete', item_path(@item), method: :delete, 
+          <%= link_to 'Delete', item_path(@item), method: :delete,
                        data: {confirm: "Really delete this item?"} %> |
         <% end %>
         <%= link_to 'Back', items_path %>
-      
+
         <div class="table-responsive">
           <table class="table">
             <tbody>
@@ -20,8 +20,8 @@
                 <td><%= @item.title %></td>
               </tr>
               <tr>
-                <td><strong>Category:</strong></td>
-                <td><%= @item.category %></td>
+                <td><strong>Director:</strong></td>
+                <td><%= @item.direction %></td>
               </tr>
               <tr>
                 <td><strong>Genre:</strong></td>
@@ -35,7 +35,7 @@
       <div class="col-md-7 col-md-offset-1">
         <h1 class="user_rating_title"><%= @item.title %></h1>
         <p><%= @item.description %></p>
-        
+
         <% if @user_ratings.blank? %>
           <h3>There's no any review yet, would you like to add the first!</h3>
           <%= link_to "Write Review", new_item_user_rating_path(@item), class: "btn btn-danger" %>
@@ -61,4 +61,3 @@
     }
   });
 </script>
-

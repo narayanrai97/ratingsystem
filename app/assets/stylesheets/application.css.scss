@@ -16,13 +16,13 @@
  @import "bootstrap";
 
  body {
-   background: olive;
+   background: #347A8F;
   }
- 
+
  .user_rating_title {
   margin: 0 0 20px 0;
  }
- 
+
  .user_ratings {
   padding: 15px 0;
   border-bottom: 1px solid #EAEAEA;
@@ -30,8 +30,29 @@
    padding-bottom: 8px;
   }
  }
- 
+
 //  th, td {
 //  border-bottom: 1px solid #FFFF00;
 //  border-top: 1px solid lightgrey;
 // }
+
+.item-form {
+  margin-right: 200px;
+  margin-left: 200px;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+	border: 1px solid #e3e3e3;
+	border-radius: 15px;
+	box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.16),
+		0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.review-form {
+  padding: 25px;
+  background-color: whitesmoke;
+	border: 1px solid #e3e3e3;
+	border-radius: 15px;
+	box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.16),
+		0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
